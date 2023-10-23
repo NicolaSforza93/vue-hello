@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Hello</title>
 </head>
+<style>
+    .title {
+        color: #435365;
+        font-size: 50px;
+    }
+</style>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <h1>{{ message }}</h1>
-        <img v-bind:src="imgSrc" alt="">
+        <h1 v-bind:class="mieClassi">{{ message }}</h1>
+        <div>
+            <img v-bind:src="imgSrc" alt="">
+        </div>
+        <div>
+            <input type="text" v-model="inputValue">
+            <p>Utente dice: {{inputValue}}</p>
+        </div>
+        <p>Contatore {{ num }}</p>
+        <button @click="onClick">Aumenta</button>
     </div>
     
 
